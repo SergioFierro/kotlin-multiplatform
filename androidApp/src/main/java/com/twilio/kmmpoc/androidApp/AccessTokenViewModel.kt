@@ -9,17 +9,16 @@ import kotlinx.coroutines.launch
 
 class AccessTokenViewModel(private val accessTokenRepository: AccessTokenRepository, private val localStorage: LocalStorage): ViewModel() {
 
-    fun saveAccessTokenURL(url: String) {
-        localStorage.accessTokenURL = url
-    }
-
-    fun getAccessTokenURL() = localStorage.accessTokenURL
+    var url: String
+        get() = localStorage.accessTokenURL
+        set(value) {
+            localStorage.accessTokenURL = value
+        }
 
     fun getAccessToken(identity: String) {
         viewModelScope.launch {
-            val result = getAccessTokenURL()?.let { accessTokenRepository.fetchAccessToken(it, identity) }
-
-            Log.d("sergio", result?.token)
+            val result = accessTokenRepository.fetchAccessToken(url, identity)
+            Log.d("sergio", result.token)
         }
     }
 }

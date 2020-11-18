@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         tv.text = greet()
 
         val accessTokenURL: EditText = findViewById(R.id.accessTokenURL)
-        accessTokenURL.setText(accessTokenViewModel.getAccessTokenURL())
+        accessTokenURL.setText(accessTokenViewModel.url)
         val getToken: Button = findViewById(R.id.getToken)
         getToken.setOnClickListener {
-            accessTokenViewModel.saveAccessTokenURL(accessTokenURL.text.toString())
+            accessTokenViewModel.url = accessTokenURL.text.toString()
             accessTokenViewModel.getAccessToken("identity")
         }
     }

@@ -24,6 +24,7 @@ kotlin {
             }
         }
     }
+    iosX64()
     sourceSets {
         val commonMain by getting {
             dependencies {

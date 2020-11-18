@@ -35,12 +35,9 @@ class AccessTokenAPI {
         }
     }
 
-    suspend fun fetchAccessToken(url: String) = client.post<AccessTokenResponse>{
+    suspend fun fetchAccessToken(url: String, identity: String) = client.post<AccessTokenResponse>{
         url(url)
         contentType(ContentType.Application.Json)
-        body = AccessTokenRequest("asdqewzxcw")
+        body = AccessTokenRequest(identity)
     }
-//    suspend fun fetchAccessToken(url: String) = client.post<AstroResult>("http://api.open-notify.org/astros.json")
-
-        suspend fun fetchPeople() = client.get<AstroResult>("http://api.open-notify.org/astros.json")
 }

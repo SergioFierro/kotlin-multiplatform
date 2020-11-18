@@ -7,5 +7,5 @@ class AccessTokenRepository : KoinComponent {
 
     private val accessTokenAPI: AccessTokenAPI by inject()
 
-    suspend fun fetchAccessToken(url: String, identity: String) = accessTokenAPI.fetchAccessToken(url)
+    suspend fun fetchAccessToken(url: String, identity: String) = accessTokenAPI.fetchAccessToken(url, identity)
 }
