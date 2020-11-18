@@ -2,6 +2,8 @@ package com.twilio.kmmpoc.androidApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import com.twilio.kmmpoc.shared.Greeting
 import android.widget.TextView
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,5 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         val tv: TextView = findViewById(R.id.text_view)
         tv.text = greet()
+
+        val accessTokenURL: EditText = findViewById(R.id.accessTokenURL)
+        accessTokenURL.setText(accessTokenViewModel.getAccessTokenURL())
+        val getToken: Button = findViewById(R.id.getToken)
+        getToken.setOnClickListener {
+            accessTokenViewModel.saveAccessTokenURL(accessTokenURL.text.toString())
+            accessTokenViewModel.getAccessToken("identity")
+        }
     }
 }

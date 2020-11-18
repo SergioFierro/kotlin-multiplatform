@@ -2,6 +2,7 @@ package com.twilio.kmmpoc.androidApp
 
 import android.app.Application
 import com.twilio.kmmpoc.androidApp.di.appModule
+import com.twilio.kmmpoc.androidApp.di.localStorageModule
 import com.twilio.kmmpoc.shared.di.initKoin
 import com.twilio.kmmpoc.shared.di.sharedModule
 import org.koin.android.ext.koin.androidContext
@@ -16,7 +17,7 @@ class Application : Application(), KoinComponent {
         initKoin {
             androidLogger()
             androidContext(this@Application)
-            modules(appModule, sharedModule)
+            modules(localStorageModule, appModule, sharedModule)
         }
     }
 }
