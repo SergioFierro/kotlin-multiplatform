@@ -18,17 +18,22 @@ class AccessTokenViewModel: ObservableObject {
             localStorage.accessTokenURL = url
         }
     }
+    @Published var identity: String = String()
+    @Published var accessTokenResponse: AccessTokenResponse? = nil
     
     init(accessTokenRepository: AccessTokenRepository = AccessTokenRepository(), localStorage: LocalStorage = LocalStorage()) {
         self.accessTokenRepository = accessTokenRepository
         self.localStorage = localStorage
-        url = self.localStorage.accessTokenURL ?? ""
+        url = self.localStorage.accessTokenURL
     }
     
-    
-    func getAccessToken(identity: String) {
-        accessTokenRepository.fetchAccessToken(url:url, identity: identity) { response, error in
-            
+    func getAccessToken() {
+        accessTokenRepository.fetchAccessToken(url: url, identity: identity) { response, error in
+            guard let response = response, error == nil else {
+                print(error)
+                return
+            }
+            self.accessTokenResponse = response
         }
     }
 }

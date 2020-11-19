@@ -29,7 +29,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}") {
-                    isForce = true
+                    version {
+                        strictly(Versions.kotlinCoroutines)
+                    }
+//                    isForce = true
                 }
                 // Ktor
                 implementation(Ktor.clientCore)
@@ -39,10 +42,6 @@ kotlin {
 
                 // Kotlinx Serialization
                 implementation(Serialization.core)
-
-                // SQL Delight
-                implementation(SqlDelight.runtime)
-                implementation(SqlDelight.coroutineExtensions)
 
                 // koin
                 api(Koin.core)

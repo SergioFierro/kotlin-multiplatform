@@ -9,33 +9,52 @@ struct ContentView: View {
     @ObservedObject var accessTokenViewModel = AccessTokenViewModel()
     
     var body: some View {
-        ZStack(alignment: .top) {
-            HStack {
-                Text(greet())
-                    .fontWeight(.light)
-                    .multilineTextAlignment(.center)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
-                    .font(.body)
+        VStack {
+            Text(greet())
+                .fontWeight(.heavy)
+            TextField("AccessToken URL", text: $accessTokenViewModel.url)
+                .padding(.all)
+                .frame(width: 360.0)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Identity", text: $accessTokenViewModel.identity)
+                .padding(.all)
+                .frame(width: 360.0)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Button("Generate Access Token") {
+                self.accessTokenViewModel.getAccessToken()
             }
-            .frame(minWidth: 0, maxHeight: 400, alignment: .topLeading)
-            VStack(spacing: 0) {
-                
-                    // 2.
-                TextField(" Enter some text", text: $accessTokenViewModel.url)
-                                    .border(Color.black)
-                
+            .padding(.all)
+            VStack {
+                HStack {
+                    Text("Token: ")
+                        .padding(.trailing)
+                    Spacer()
+                    Text(accessTokenViewModel.accessTokenResponse?.token ?? "")
+                        .lineLimit(3)
+                        .frame(width: 270.0)
+                }
+                .padding(.all)
+                HStack {
+                    Text("Identity: ")
+                        .padding(.trailing)
+                    Spacer()
+                    Text(accessTokenViewModel.accessTokenResponse?.identity ?? "")
+                        .lineLimit(3)
+                        .frame(width: 270.0)
+                }
+                .padding(.all)
+                HStack {
+                    Text("ServiceSid: ")
+                        .padding(.trailing)
+                    Spacer()
+                    Text(accessTokenViewModel.accessTokenResponse?.serviceSid ?? "")
+                        .lineLimit(3)
+                        .frame(width: 270.0)
+                }
+                .padding(.all)
+                Spacer()
             }
-            .foregroundColor(Color.black.opacity(0.7))
-            .padding()
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-            .offset(x: 0, y: 0)
-            .font(.title)
-
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-        .background(Color.orange.opacity(0.2))
-        .edgesIgnoringSafeArea(.all)
-
     }
 }
 
@@ -44,16 +63,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-//var body: some View {
-//    ZStack(alignment: .top) {
-//        VStack(alignment: .center){
-//            Text(greet())
-//                .multilineTextAlignment(.center)
-//            Divider()
-//            TextField("Enter url", text: $username)
-//                .padding(.horizontal, 25.0)
-//        }
-//    }
-//}
