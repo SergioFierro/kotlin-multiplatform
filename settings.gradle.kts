@@ -18,4 +18,5 @@ rootProject.name = "KMMPoC"
 enableFeaturePreview("GRADLE_METADATA")
 
 include(":androidApp")
+include(":jsApp")
 include(":shared")

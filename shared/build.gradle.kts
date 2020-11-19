@@ -25,14 +25,18 @@ kotlin {
         }
     }
     iosX64()
+    js {
+        browser {
+        }
+    }
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}") {
-                    version {
-                        strictly(Versions.kotlinCoroutines)
-                    }
-//                    isForce = true
+                    isForce = true
+//                    version {
+//                        strictly(Versions.kotlinCoroutines)
+//                    }
                 }
                 // Ktor
                 implementation(Ktor.clientCore)
@@ -56,7 +60,6 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Ktor.clientAndroid)
-//                implementation("com.google.android.material:material:1.2.0")
             }
         }
         val androidTest by getting {
@@ -71,6 +74,11 @@ kotlin {
             }
         }
         val iosTest by getting
+        val jsMain by getting {
+            dependencies {
+                implementation(Ktor.clientJs)
+            }
+        }
     }
 }
 android {

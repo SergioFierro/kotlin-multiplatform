@@ -11,7 +11,7 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
     modules(sharedModule)
 }
 
-// called by iOS etc
+// called by iOS, JS etc
 fun initKoin() = initKoin{}
 
 val sharedModule = module {

@@ -14,6 +14,7 @@ data class AccessTokenResponse(val token: String, val serviceSid: String, val id
 
 @Serializable
 data class AccessTokenRequest(val identity: String)
+
 class AccessTokenAPI {
     private val nonStrictJson = Json { isLenient = true; ignoreUnknownKeys = true }
 

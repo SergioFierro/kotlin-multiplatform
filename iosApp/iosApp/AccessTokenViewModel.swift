@@ -33,6 +33,7 @@ class AccessTokenViewModel: ObservableObject {
                 print(error)
                 return
             }
+            print(response.token)
             self.accessTokenResponse = response
         }
     }
