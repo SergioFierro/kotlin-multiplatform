@@ -3,7 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
 }
-group = "com.twilio.kmmpoc"
+group = "com.sergiofierro.kotlin_multiplatform"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -16,7 +16,7 @@ repositories {
 android {
     compileSdkVersion(AndroidSdk.compile)
     defaultConfig {
-        applicationId = "com.twilio.kmmpoc.androidApp"
+        applicationId = "com.sergiofierro.kotlin_multiplatform.androidApp"
         minSdkVersion(AndroidSdk.min)
         targetSdkVersion(AndroidSdk.target)
         versionCode = 1

@@ -1,6 +1,6 @@
-import com.twilio.kmmpoc.shared.Greeting
-import com.twilio.kmmpoc.shared.repository.AccessTokenResponse
-import com.twilio.kmmpoc.shared.repository.LocalStorage
+import com.sergiofierro.kotlin_multiplatform.shared.Greeting
+import com.sergiofierro.kotlin_multiplatform.shared.repository.AccessTokenResponse
+import com.sergiofierro.kotlin_multiplatform.shared.repository.LocalStorage
 import react.*
 import react.dom.*
 import kotlinx.coroutines.*

@@ -1,5 +1,5 @@
-import com.twilio.kmmpoc.shared.di.initKoin
-import com.twilio.kmmpoc.shared.repository.AccessTokenRepository
+import com.sergiofierro.kotlin_multiplatform.shared.di.initKoin
+import com.sergiofierro.kotlin_multiplatform.shared.repository.AccessTokenRepository
 import react.child
 import react.createContext
 import react.dom.render

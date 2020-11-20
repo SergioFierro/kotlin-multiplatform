@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.twilio.kmmpoc.androidApp">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sergiofierro.kotlin_multiplatform.androidApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
             android:allowBackup="false"
             android:supportsRtl="true"
-            android:label="@string/kmm"
-            android:name=".Application"
+            android:label="@string/kotlin_multiplatform"
+            android:name="com.sergiofierro.kotlin_multiplatform.androidApp.Application"
             android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.sergiofierro.kotlin_multiplatform.androidApp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

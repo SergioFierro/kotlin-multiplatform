@@ -13,7 +13,7 @@ pluginManagement {
         }
     }
 }
-rootProject.name = "KMMPoC"
+rootProject.name = "kotlin-multiplatform"
 
 enableFeaturePreview("GRADLE_METADATA")
 

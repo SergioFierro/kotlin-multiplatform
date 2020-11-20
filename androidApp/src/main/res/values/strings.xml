@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="kmm">Kotlin multiplatform</string>
+    <string name="kotlin_multiplatform">Kotlin multiplatform</string>
 </resources>

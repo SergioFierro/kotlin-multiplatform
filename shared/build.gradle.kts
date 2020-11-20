@@ -6,7 +6,7 @@ plugins {
     id("kotlinx-serialization")
     id("kotlin-android-extensions")
 }
-group = "com.twilio.kmmpoc"
+group = "com.sergiofierro.kotlin_multiplatform"
 version = "1.0-SNAPSHOT"
 
 repositories {

@@ -12,7 +12,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:4.2.0-alpha16")
     }
 }
-group = "com.twilio.kmmpoc"
+group = "com.sergiofierro.kotlin_multiplatform"
 version = "1.0-SNAPSHOT"
 
 allprojects {
