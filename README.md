@@ -17,6 +17,7 @@ Kotlin multiplatform project sharing code to Android, iOS and JS apps
 * Java 8
 * Gradle 6.7
 * Kotlin 1.4.10
+* Xcode 11+
 
 
 <a name='Usage'></a>
